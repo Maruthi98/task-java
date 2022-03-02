@@ -1,0 +1,4 @@
+
+FROM openjdk:8
+COPY ${WAR_FILE} app.war
+ENTRYPOINT ["java","-war","app.war"]
