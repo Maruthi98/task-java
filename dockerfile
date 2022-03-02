@@ -1,7 +1,7 @@
-FROM openjdk:11
-COPY . /usr/src/myapp
-WORKDIR /usr/src/myapp
-RUN javac Main.java
-CMD ["java", "Main"]
-
+FROM ubuntu
+MAINTAINER Maruthi98
+RUN apt-get update
+RUN apt-get install -y nginx
+ENTRYPOINT [“/usr/sbin/nginx”,”-g”,”daemon off;”]
+EXPOSE 80
 
